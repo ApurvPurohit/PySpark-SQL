@@ -86,7 +86,7 @@ def readfile():
         df.value.substr(402,4).alias('Column 29')
     )  
     print(type(df2))
-    TableName = "PCSecureHorizonsAZ4670MemberLoad"
+    TableName = 'SutterHealthLoad'
     DatabaseName = "Eligibility"
     no_of_rows = df2.count()
     # Splitting the Dataframe if size is LARGE
