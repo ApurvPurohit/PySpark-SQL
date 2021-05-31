@@ -13,181 +13,140 @@ Select Top 1 LoadNum from T_EligLoads where TableName='SutterHealthLoad' Order B
 
 
 Column Mapping Info:
-
-				<externalMetadataColumns
+<externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[RecordNumber]"
+                      dataType="i4"
+                      name="RecordNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[LoadNum]"
+                      dataType="i4"
+                      name="LoadNum" />
+					<externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[TransType]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      name="Column 1" />
+                      name="TransType" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="3"
-                      name="Column 2" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 3]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[GroupNum]"
                       codePage="1252"
                       dataType="str"
                       length="5"
-                      name="Column 3" />
+                      name="GroupNum" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 4]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[SubscriberNbr]"
                       codePage="1252"
                       dataType="str"
                       length="9"
-                      name="Column 4" />
+                      name="SubscriberNbr" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 5]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Relationship]"
                       codePage="1252"
                       dataType="str"
                       length="2"
-                      name="Column 5" />
+                      name="Relationship" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 6]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[First]"
                       codePage="1252"
                       dataType="str"
                       length="12"
-                      name="Column 6" />
+                      name="First" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 7]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[MI]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      name="Column 7" />
+                      name="MI" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 8]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Last]"
                       codePage="1252"
                       dataType="str"
                       length="18"
-                      name="Column 8" />
+                      name="Last" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 9]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Address1]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      name="Column 9" />
+                      name="Address1" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 10]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Address2]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      name="Column 10" />
+                      name="Address2" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 11]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                       codePage="1252"
                       dataType="str"
                       length="15"
-                      name="Column 11" />
+                      name="City" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 12]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[State]"
                       codePage="1252"
                       dataType="str"
                       length="2"
-                      name="Column 12" />
+                      name="State" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 13]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Zip]"
                       codePage="1252"
                       dataType="str"
                       length="5"
-                      name="Column 13" />
+                      name="Zip" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 14]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Zip4]"
                       codePage="1252"
                       dataType="str"
                       length="4"
-                      name="Column 14" />
+                      name="Zip4" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 15]"
-                      codePage="1252"
-                      dataType="str"
-                      length="25"
-                      name="Column 15" />
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[DOB]"
+                      dataType="dbTimeStamp"
+                      name="DOB" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 16]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="Column 16" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 17]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Sex]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      name="Column 17" />
+                      name="Sex" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 18]"
-                      codePage="1252"
-                      dataType="str"
-                      length="44"
-                      name="Column 18" />
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Eff_Date]"
+                      dataType="dbTimeStamp"
+                      name="Eff_Date" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 19]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="Column 19" />
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[ExpDate]"
+                      dataType="dbTimeStamp"
+                      name="ExpDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 20]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="Column 20" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 21]"
-                      codePage="1252"
-                      dataType="str"
-                      length="21"
-                      name="Column 21" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 22]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[BenefitPlanID]"
                       codePage="1252"
                       dataType="str"
                       length="15"
-                      name="Column 22" />
+                      name="BenefitPlanID" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 23]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Column 23" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 24]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[MemberCOB]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      name="Column 24" />
+                      name="MemberCOB" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 25]"
-                      codePage="1252"
-                      dataType="str"
-                      length="44"
-                      name="Column 25" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 26]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[WrittenLang]"
                       codePage="1252"
                       dataType="str"
                       length="3"
-                      name="Column 26" />
+                      name="WrittenLang" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 27]"
-                      codePage="1252"
-                      dataType="str"
-                      length="67"
-                      name="Column 27" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 28]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[SpokenLang]"
                       codePage="1252"
                       dataType="str"
                       length="3"
-                      name="Column 28" />
+                      name="SpokenLang" />
                     <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 29]"
+                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Filler]"
                       codePage="1252"
                       dataType="str"
-                      length="4"
-                      name="Column 29" />
+                      length="19"
+                      name="Filler" />
                   </externalMetadataColumns>
