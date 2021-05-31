@@ -1,0 +1,193 @@
+Load query:
+
+INSERT INTO T_EligLoads(LoadDate, FileName, TableName, ClientID)
+Values
+(
+	GETDATE(),
+	'SutterHealth.txt',
+	'SutterHealthLoad',
+	723
+)
+
+Select Top 1 LoadNum from T_EligLoads where TableName='SutterHealthLoad' Order By LoadNum desc
+
+
+Column Mapping Info:
+
+				<externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Column 1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Column 2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Column 3" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="Column 4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Column 5" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="Column 6" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Column 7" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      name="Column 8" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Column 9" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 10]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Column 10" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 11]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Column 11" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 12]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Column 12" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 13]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Column 13" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 14]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Column 14" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 15]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="Column 15" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 16]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Column 16" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 17]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Column 17" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 18]"
+                      codePage="1252"
+                      dataType="str"
+                      length="44"
+                      name="Column 18" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 19]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Column 19" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 20]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Column 20" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 21]"
+                      codePage="1252"
+                      dataType="str"
+                      length="21"
+                      name="Column 21" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 22]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Column 22" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 23]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Column 23" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 24]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Column 24" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 25]"
+                      codePage="1252"
+                      dataType="str"
+                      length="44"
+                      name="Column 25" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 26]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Column 26" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 27]"
+                      codePage="1252"
+                      dataType="str"
+                      length="67"
+                      name="Column 27" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 28]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Column 28" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_SutterHealth\FF_SRC_SutterHealth.Outputs[Flat File Source Output].ExternalColumns[Column 29]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Column 29" />
+                  </externalMetadataColumns>
