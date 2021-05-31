@@ -1,152 +1,22 @@
-Load query:
-
-INSERT INTO T_EligLoads(LoadDate, FileName, TableName, ClientID)
-Values
-(
-	GETDATE(),
-	'SutterHealth.txt',
-	'SutterHealthLoad',
-	723
-)
-
-Select Top 1 LoadNum from T_EligLoads where TableName='SutterHealthLoad' Order By LoadNum desc
-
-
-Column Mapping Info:
-<externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[RecordNumber]"
-                      dataType="i4"
-                      name="RecordNumber" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[LoadNum]"
-                      dataType="i4"
-                      name="LoadNum" />
-					<externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[TransType]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="TransType" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[GroupNum]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      name="GroupNum" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[SubscriberNbr]"
-                      codePage="1252"
-                      dataType="str"
-                      length="9"
-                      name="SubscriberNbr" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Relationship]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      name="Relationship" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[First]"
-                      codePage="1252"
-                      dataType="str"
-                      length="12"
-                      name="First" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[MI]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="MI" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Last]"
-                      codePage="1252"
-                      dataType="str"
-                      length="18"
-                      name="Last" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Address1]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="Address1" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Address2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="Address2" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="City" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[State]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      name="State" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Zip]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      name="Zip" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Zip4]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4"
-                      name="Zip4" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[DOB]"
-                      dataType="dbTimeStamp"
-                      name="DOB" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Sex]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="Sex" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Eff_Date]"
-                      dataType="dbTimeStamp"
-                      name="Eff_Date" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[ExpDate]"
-                      dataType="dbTimeStamp"
-                      name="ExpDate" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[BenefitPlanID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="BenefitPlanID" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[MemberCOB]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="MemberCOB" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[WrittenLang]"
-                      codePage="1252"
-                      dataType="str"
-                      length="3"
-                      name="WrittenLang" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[SpokenLang]"
-                      codePage="1252"
-                      dataType="str"
-                      length="3"
-                      name="SpokenLang" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_SutterHealth\OLE_DST_SutterHealth.Inputs[OLE DB Destination Input].ExternalColumns[Filler]"
-                      codePage="1252"
-                      dataType="str"
-                      length="19"
-                      name="Filler" />
-                  </externalMetadataColumns>
+df.value.substr(1,1).alias('TransType'),
+df.value.substr(2,5).alias('GroupNum'),
+df.value.substr(7,9).alias('SubscriberNbr'),
+df.value.substr(16,2).alias('Relationship'),
+df.value.substr(18,12).alias('First'),
+df.value.substr(30,1).alias('MI'),
+df.value.substr(31,18).alias('Last'),
+df.value.substr(49,30).alias('Address1'),
+df.value.substr(79,30).alias('Address2'),
+df.value.substr(109,15).alias('City'),
+df.value.substr(124,2).alias('State'),
+df.value.substr(126,5).alias('Zip'),
+df.value.substr(131,4).alias('Zip4'),
+df.value.substr(135,25).alias('DOB'),
+df.value.substr(160,1).alias('Sex'),
+df.value.substr(161,25).alias('Eff_Date'),
+df.value.substr(186,25).alias('ExpDate'),
+df.value.substr(211,15).alias('BenefitPlanID'),
+df.value.substr(226,1).alias('MemberCOB'),
+df.value.substr(227,3).alias('WrittenLang'),
+df.value.substr(230,3).alias('SpokenLang'),
+df.value.substr(233,19).alias('Filler'),
