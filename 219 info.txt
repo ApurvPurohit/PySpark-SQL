@@ -1,216 +1,53 @@
-       ---------------------------------MEC-------------------------------------------------
-INSERT INTO T_EligLoads
-                      (LoadDate, FileName, TableName, ClientID)
-Values
-(
-GETDATE(),
-'COSMOSMEC_0000.TXT',
-'MedicaMECLoad',
-100
-)
-Select Top 1 LoadNum from T_EligLoads where TableName='MedicaMECLoad' 
-Order By LoadNum desc
-
-
-
-<externalMetadataColumn id="25" name="Column 0" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="29" name="Column 1" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="33" name="Column 2" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="37" name="Column 3" description="" precision="0" scale="0" length="9" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="41" name="Column 4" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="45" name="Column 5" description="" precision="0" scale="0" length="12" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="49" name="Column 6" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="53" name="Column 7" description="" precision="0" scale="0" length="18" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="57" name="Column 8" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="61" name="Column 9" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="65" name="Column 10" description="" precision="0" scale="0" length="15" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="69" name="Column 11" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="73" name="Column 12" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="77" name="Column 13" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="81" name="Column 14" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="85" name="Column 15" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="89" name="Column 16" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="93" name="Column 17" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="97" name="Column 18" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="101" name="Column 19" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="105" name="Column 20" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="109" name="Column 21" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="113" name="Column 22" description="" precision="0" scale="0" length="9" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="117" name="Column 23" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="121" name="Column 24" description="" precision="0" scale="0" length="12" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="125" name="Column 25" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="129" name="Column 26" description="" precision="0" scale="0" length="16" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="133" name="Column 27" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="137" name="Column 28" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="141" name="Column 29" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="145" name="Column 30" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="149" name="Column 31" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="153" name="Column 32" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="157" name="Column 33" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="161" name="Column 34" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="165" name="Column 35" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="169" name="Column 36" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="173" name="Column 37" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="177" name="Column 38" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="181" name="Column 39" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="185" name="Column 40" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="189" name="Column 41" description="" precision="0" scale="0" length="12" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="193" name="Column 42" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="197" name="Column 43" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="201" name="Column 44" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="205" name="Column 45" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="209" name="Column 46" description="" precision="0" scale="0" length="18" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="213" name="Column 47" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="217" name="Column 48" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="221" name="Column 49" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="225" name="Column 50" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="229" name="Column 51" description="" precision="0" scale="0" length="9" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="233" name="Column 52" description="" precision="0" scale="0" length="41" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="237" name="Column 53" description="" precision="0" scale="0" length="50" dataType="str" codePage="1252" mappedColumnId="0"/></externalMetadataColumns></output>
-
--------------------------------------------------------------------MSP----------------------------------------------------------------------
-
-INSERT INTO T_EligLoads
-                      (LoadDate, FileName, TableName, ClientID)
-Values
-(
-GETDATE(),
-'COSMOSMSP_0000.TXT',
-'MedicaMSPLoad',
-100
-)
-Select Top 1 LoadNum from T_EligLoads where TableName='MedicaMSPLoad' 
-Order By LoadNum desc
-
-
-<externalMetadataColumn id="6099" name="RecordID" description="" precision="0" scale="0" length="0" dataType="i4" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6100" name="LoadNum" description="" precision="0" scale="0" length="0" dataType="i4" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6101" name="TransType" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6102" name="Site" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6103" name="GroupNum" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6104" name="SubscriberNum" description="" precision="0" scale="0" length="9" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6105" name="Relationship" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6106" name="FirstName" description="" precision="0" scale="0" length="12" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6107" name="MI" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6108" name="LastName" description="" precision="0" scale="0" length="18" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6109" name="Address1" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6110" name="Address2" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6111" name="City" description="" precision="0" scale="0" length="15" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6112" name="State" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6113" name="ZipCode" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6114" name="ZipCodeExt" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6115" name="CountyCode" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6116" name="HomeAreaCode" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6117" name="HomePhoneNum" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6118" name="WorkAreaCode" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6119" name="WorkPhoneNum" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6120" name="MaritalStatus" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6121" name="DOB" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6122" name="Sex" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6123" name="SSN" description="" precision="0" scale="0" length="9" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6124" name="OriginalEffDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6125" name="MedicareNum" description="" precision="0" scale="0" length="12" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6126" name="HCFAStatus" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6127" name="MedicaidNum" description="" precision="0" scale="0" length="16" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6128" name="EffDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6129" name="ExpDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6130" name="MedicalCov" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6131" name="DentalCov" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6132" name="VisionCov" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6133" name="AncillaryCov" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6134" name="MedicalProvNum" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6135" name="DentalProvNum" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6136" name="MedicalBenPkg" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6137" name="DentalBenPkg" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6138" name="VisionBenPkg" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6139" name="MedicalClassCode" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6140" name="AdultOrDependent" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6141" name="ClientCode" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6142" name="DeptNum" description="" precision="0" scale="0" length="12" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6143" name="MedicalProvName" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6144" name="MedicalProvPhone" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6145" name="DentalProvName" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6146" name="DentalProvPhone" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6147" name="EmployeeAltID" description="" precision="0" scale="0" length="18" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6148" name="RxBenPkgNum" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6149" name="EmployeeClassCode" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6150" name="MemberCOB" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6151" name="SubscriberLang" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6152" name="CESAltID" description="" precision="0" scale="0" length="9" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6153" name="MemberID" description="" precision="0" scale="0" length="41" dataType="str" codePage="1252" mappedColumnId="0"/></externalMetadataColumns></input>
-</inputs>
-
-
-
-----------------------------------------------------------------MTK---------------------------------------------------------------------
-
-INSERT INTO T_EligLoads
-                      (LoadDate, FileName, TableName, ClientID)
-Values
-(
-GETDATE(),
-'COSMOSMTK_0000.TXT',
-'MedicaMTKLoad',
-100
-)
-Select Top 1 LoadNum from T_EligLoads where TableName='MedicaMTKLoad' 
-Order By LoadNum desc
-
-
-
-<externalMetadataColumn id="6099" name="RecordID" description="" precision="0" scale="0" length="0" dataType="i4" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6100" name="LoadNum" description="" precision="0" scale="0" length="0" dataType="i4" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6101" name="TransType" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6102" name="Site" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6103" name="GroupNum" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6104" name="SubscriberNum" description="" precision="0" scale="0" length="9" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6105" name="Relationship" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6106" name="FirstName" description="" precision="0" scale="0" length="12" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6107" name="MI" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6108" name="LastName" description="" precision="0" scale="0" length="18" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6109" name="Address1" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6110" name="Address2" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6111" name="City" description="" precision="0" scale="0" length="15" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6112" name="State" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6113" name="ZipCode" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6114" name="ZipCodeExt" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6115" name="CountyCode" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6116" name="HomeAreaCode" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6117" name="HomePhoneNum" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6118" name="WorkAreaCode" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6119" name="WorkPhoneNum" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6120" name="MaritalStatus" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6121" name="DOB" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6122" name="Sex" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6123" name="SSN" description="" precision="0" scale="0" length="9" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6124" name="OriginalEffDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6125" name="MedicareNum" description="" precision="0" scale="0" length="12" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6126" name="HCFAStatus" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6127" name="MedicaidNum" description="" precision="0" scale="0" length="16" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6128" name="EffDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6129" name="ExpDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
-<externalMetadataColumn id="6130" name="MedicalCov" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6131" name="DentalCov" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6132" name="VisionCov" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6133" name="AncillaryCov" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6134" name="MedicalProvNum" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6135" name="DentalProvNum" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6136" name="MedicalBenPkg" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6137" name="DentalBenPkg" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6138" name="VisionBenPkg" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6139" name="MedicalClassCode" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6140" name="AdultOrDependent" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6141" name="ClientCode" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6142" name="DeptNum" description="" precision="0" scale="0" length="12" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6143" name="MedicalProvName" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6144" name="MedicalProvPhone" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6145" name="DentalProvName" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6146" name="DentalProvPhone" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6147" name="EmployeeAltID" description="" precision="0" scale="0" length="18" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6148" name="RxBenPkgNum" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6149" name="EmployeeClassCode" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6150" name="MemberCOB" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6151" name="SubscriberLang" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6152" name="CESAltID" description="" precision="0" scale="0" length="9" dataType="str" codePage="1252" mappedColumnId="0"/>
-<externalMetadataColumn id="6153" name="MemberID" description="" precision="0" scale="0" length="41" dataType="str" codePage="1252" mappedColumnId="0"/></externalMetadataColumns></input>
-</inputs>
+[("TransType", 1),
+("Site", 3),
+("GroupNum", 5),
+("SubscriberNum", 9),
+("Relationship", 2),
+("FirstName", 12),
+("MI", 1),
+("LastName", 18),
+("Address1", 30),
+("Address2", 30),
+("City", 15),
+("State", 2),
+("ZipCode", 5),
+("ZipCodeExt", 4),
+("CountyCode", 4),
+("HomeAreaCode", 3),
+("HomePhoneNum", 7),
+("WorkAreaCode", 3),
+("WorkPhoneNum", 7),
+("MaritalStatus", 1),
+("DOB", 0),
+("Sex", 1),
+("SSN", 9),
+("OriginalEffDate", 0),
+("MedicareNum", 12),
+("HCFAStatus", 1),
+("MedicaidNum", 16),
+("EffDate", 0),
+("ExpDate", 0),
+("MedicalCov", 1),
+("DentalCov", 1),
+("VisionCov", 1),
+("AncillaryCov", 1),
+("MedicalProvNum", 7),
+("DentalProvNum", 7),
+("MedicalBenPkg", 5),
+("DentalBenPkg", 5),
+("VisionBenPkg", 5),
+("MedicalClassCode", 2),
+("AdultOrDependent", 1),
+("ClientCode", 10),
+("DeptNum", 12),
+("MedicalProvName", 30),
+("MedicalProvPhone", 10),
+("DentalProvName", 30),
+("DentalProvPhone", 10),
+("EmployeeAltID", 18),
+("RxBenPkgNum", 5),
+("EmployeeClassCode", 2),
+("MemberCOB", 1),
+("SubscriberLang", 3),
+("CESAltID", 9),
+("MemberID", 41)]
