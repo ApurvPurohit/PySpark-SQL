@@ -1,53 +1,85 @@
-[("TransType", 1),
-("Site", 3),
-("GroupNum", 5),
-("SubscriberNum", 9),
-("Relationship", 2),
-("FirstName", 12),
-("MI", 1),
-("LastName", 18),
-("Address1", 30),
-("Address2", 30),
-("City", 15),
-("State", 2),
-("ZipCode", 5),
-("ZipCodeExt", 4),
-("CountyCode", 4),
-("HomeAreaCode", 3),
-("HomePhoneNum", 7),
-("WorkAreaCode", 3),
-("WorkPhoneNum", 7),
-("MaritalStatus", 1),
-("DOB", 0),
-("Sex", 1),
-("SSN", 9),
-("OriginalEffDate", 0),
-("MedicareNum", 12),
-("HCFAStatus", 1),
-("MedicaidNum", 16),
-("EffDate", 0),
-("ExpDate", 0),
-("MedicalCov", 1),
-("DentalCov", 1),
-("VisionCov", 1),
-("AncillaryCov", 1),
-("MedicalProvNum", 7),
-("DentalProvNum", 7),
-("MedicalBenPkg", 5),
-("DentalBenPkg", 5),
-("VisionBenPkg", 5),
-("MedicalClassCode", 2),
-("AdultOrDependent", 1),
-("ClientCode", 10),
-("DeptNum", 12),
-("MedicalProvName", 30),
-("MedicalProvPhone", 10),
-("DentalProvName", 30),
-("DentalProvPhone", 10),
-("EmployeeAltID", 18),
-("RxBenPkgNum", 5),
-("EmployeeClassCode", 2),
-("MemberCOB", 1),
-("SubscriberLang", 3),
-("CESAltID", 9),
-("MemberID", 41)]
+INSERT INTO T_EligLoads
+                      (LoadDate, FileName, TableName, ClientID)
+Values
+(
+GETDATE(),
+'F5748PGH.F5708X9P.ACNCNTLF.TXT',
+'CDBGroupLoad',
+299
+)
+
+exec usp_ClearTable 'CDBGroupLoad'
+
+Select Top 1 LoadNum from T_EligLoads where TableName='CDBGroupLoad' 
+Order By LoadNum desc
+
+
+<externalMetadataColumn id="1059" name="RecordID" description="" precision="0" scale="0" length="0" dataType="i4" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="1060" name="LoadNum" description="" precision="0" scale="0" length="0" dataType="i4" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="1061" name="RecordType" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1062" name="ActionInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1063" name="CustomerNumber" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1064" name="GroupNum" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1065" name="PlanVarCoverage" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1066" name="ReportCodeCov" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1067" name="GroupName" description="" precision="0" scale="0" length="30" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1068" name="CustomerCareOfAddress" description="" precision="0" scale="0" length="32" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1069" name="CustomerStreetAddress" description="" precision="0" scale="0" length="32" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1070" name="CustomerCity" description="" precision="0" scale="0" length="21" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1071" name="CustomerState" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1072" name="CustomerZipCode" description="" precision="0" scale="0" length="11" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1073" name="AnalystName1" description="" precision="0" scale="0" length="21" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1074" name="AnalystName2" description="" precision="0" scale="0" length="15" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1075" name="DateModified" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="1076" name="TimeModified" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1077" name="Zone" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1078" name="SharedArrangement" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1079" name="SAStartDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="1080" name="SAStopDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="1081" name="NumberOfCov" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1082" name="CovStartDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="1083" name="CovStopDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="1084" name="CovBenefitSet" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1085" name="CovProductType" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1086" name="ProductCode" description="" precision="0" scale="0" length="11" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1087" name="LegalEntity" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1088" name="CovCode" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1089" name="CovAccountCode" description="" precision="0" scale="0" length="6" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1090" name="CovSuffix" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1091" name="FinanceInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1092" name="CoverageFBI" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1093" name="VendorStartDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="1094" name="VendorStopDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="1095" name="VendorProductType" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1096" name="VendorProductCode" description="" precision="0" scale="0" length="11" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1097" name="VendorCSDInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1098" name="VendorARInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1099" name="VendorCustomerInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1100" name="VendorBulkMailLoc" description="" precision="0" scale="0" length="8" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1101" name="VendorCallBenefit" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1102" name="VendorOptionCode1" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1103" name="VendorOptionCode2" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1104" name="VendorOptionCode3" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1105" name="VendorOptionCode4" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1106" name="VendorOptionCode5" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1107" name="VendorOptionCode6" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1108" name="VendorOptionCode7" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1109" name="VendorOptionCode8" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1110" name="VendorOptionCode9" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1111" name="VendorOptionCode10" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1112" name="VendorOptionCode11" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1113" name="VendorOptionCode12" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1114" name="VendorOptionCode13" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1115" name="VendorOptionCode14" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1116" name="VendorOptionCode15" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1117" name="VendorOptionCode16" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1118" name="VendorOptionCode17" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1119" name="VendorOptionCode18" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1120" name="VendorOptionCode19" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1121" name="VendorOptionCode20" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1122" name="VendorOptionCode21" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1123" name="VendorOptionCode22" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1124" name="ObligorID" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="1125" name="MarketType" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="3421" name="MigrationSourceCode" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"/></externalMetadataColumns></input>
+</inputs>
