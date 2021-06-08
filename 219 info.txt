@@ -1,68 +1,56 @@
-[("RecordID", 0)
-,("LoadNum", 0)
-,("RecordType", 1)
-,("ActionInd", 1)
-,("CustomerNumber", 7)
-,("GroupNum", 7)
-,("PlanVarCoverage", 4)
-,("ReportCodeCov", 4)
-,("GroupName" ,30)
-,("CustomerCareOfAddress" ,32)
-,("CustomerStreetAddress" ,32)
-,("CustomerCity" ,21)
-,("CustomerState", 2)
-,("CustomerZipCode" ,11)
-,("AnalystName1" ,21)
-,("AnalystName2" ,15)
-,("DateModified", 0)
-,("TimeModified", 7)
-,("Zone", 4)
-,("SharedArrangement", 2)
-,("SAStartDate", 0)
-,("SAStopDate", 0)
-,("NumberOfCov", 2)
-,("CovStartDate", 0)
-,("CovStopDate", 0)
-,("CovBenefitSet" ,10)
-,("CovProductType", 2)
-,("ProductCode" ,11)
-,("LegalEntity", 5)
-,("CovCode", 2)
-,("CovAccountCode", 6)
-,("CovSuffix", 2)
-,("FinanceInd", 1)
-,("CoverageFBI", 1)
-,("VendorStartDate", 0)
-,("VendorStopDate", 0)
-,("VendorProductType", 2)
-,("VendorProductCode" ,11)
-,("VendorCSDInd", 1)
-,("VendorARInd", 1)
-,("VendorCustomerInd", 1)
-,("VendorBulkMailLoc", 8)
-,("VendorCallBenefit", 2)
-,("VendorOptionCode1", 4)
-,("VendorOptionCode2", 4)
-,("VendorOptionCode3", 4)
-,("VendorOptionCode4", 4)
-,("VendorOptionCode5", 4)
-,("VendorOptionCode6", 4)
-,("VendorOptionCode7", 4)
-,("VendorOptionCode8", 4)
-,("VendorOptionCode9", 4)
-,("VendorOptionCode10", 4)
-,("VendorOptionCode11", 4)
-,("VendorOptionCode12", 4)
-,("VendorOptionCode13", 4)
-,("VendorOptionCode14", 4)
-,("VendorOptionCode15", 4)
-,("VendorOptionCode16", 4)
-,("VendorOptionCode17", 4)
-,("VendorOptionCode18", 4)
-,("VendorOptionCode19", 4)
-,("VendorOptionCode20", 4)
-,("VendorOptionCode21", 4)
-,("VendorOptionCode22", 4)
-,("ObligorID", 2)
-,("MarketType", 3)
-,("MigrationSourceCode", 3)]
+<externalMetadataColumn id="1999" name="RecordID" description="" precision="0" scale="0" length="0" dataType="i4" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="2000" name="LoadNum" description="" precision="0" scale="0" length="0" dataType="i4" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="2001" name="SourceInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2002" name="ActionInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2003" name="USSInd" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2004" name="TransRecordType" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2005" name="CustomerNumber" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2006" name="EmployeeID" description="" precision="0" scale="0" length="11" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2007" name="FirstName" description="" precision="0" scale="0" length="12" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2008" name="MI" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2009" name="LastName" description="" precision="0" scale="0" length="20" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2010" name="Sex" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2011" name="DOB" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="2012" name="HomePhone" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2013" name="WorkPhone" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2014" name="TICRelationship" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2015" name="CESRelationship" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2016" name="SequenceNum" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2017" name="EffDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="2018" name="StopDate" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="2019" name="PolicyNumber" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2020" name="PlanVarCoverage" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2021" name="ReportingCode" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2022" name="StatusInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2023" name="MemsCovered" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2024" name="MarketSite" description="" precision="0" scale="0" length="7" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2025" name="ResMarketSite" description="" precision="0" scale="0" length="8" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2026" name="ProductType" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2027" name="FeedbackBridgeInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2028" name="DependentDiffersInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2029" name="CommonUtility1" description="" precision="0" scale="0" length="8" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2030" name="SurviveSpouseCode" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2031" name="PayeeSSN" description="" precision="0" scale="0" length="11" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2032" name="PayeeLastName" description="" precision="0" scale="0" length="20" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2033" name="PayeeFirstName" description="" precision="0" scale="0" length="13" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2034" name="MaritalStatus" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2035" name="StreetAddress" description="" precision="0" scale="0" length="32" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2036" name="CareOfAddress" description="" precision="0" scale="0" length="32" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2037" name="City" description="" precision="0" scale="0" length="21" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2038" name="State" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2039" name="Zip" description="" precision="0" scale="0" length="5" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2040" name="ZipExt" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2041" name="Suffix" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2042" name="Account" description="" precision="0" scale="0" length="6" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2043" name="Zone" description="" precision="0" scale="0" length="4" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2044" name="UpdateTimeStamp" description="" precision="0" scale="0" length="0" dataType="dbTimeStamp" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="2045" name="FormerEEID" description="" precision="0" scale="0" length="11" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2046" name="MedicareTypeInd" description="" precision="0" scale="0" length="1" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2047" name="CovType" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2048" name="PlanCode" description="" precision="0" scale="0" length="2" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2049" name="BenefitSet" description="" precision="0" scale="0" length="10" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2050" name="AltID" description="" precision="0" scale="0" length="11" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="2051" name="AltIDInd" description="" precision="0" scale="0" length="64" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="5943" name="PriorMemberID" description="" precision="0" scale="0" length="9" dataType="str" codePage="1252" mappedColumnId="0"/>
+<externalMetadataColumn id="5944" name="MigratedtoTOPS" description="" precision="0" scale="0" length="0" dataType="bool" codePage="0" mappedColumnId="0"/></externalMetadataColumns></input>
+</inputs>
