@@ -14,89 +14,89 @@ FROM
       AND (PCON.ContTermDate IS NULL OR   PCON.ContTermDate > GETDATE() + 40)
 
 
-      UPDATE OCPI 
-      SET   OCPI.Phone = PE.provphone, 
-            OCPI.Fax = PE.provFax, 
-            OCPI.Email = PE.INETADDRESS
-      FROM Provider.dbo.OxfordCurrentProviderInformation as OCPI
-      INNER JOIN Provider.dbo.T_ProviderElectronics as PE ON PE.AcnProvID = OCPI.ACNPROVID ;
+      UPDATE Provider.dbo.OxfordCurrentProviderInformation 
+      SET   Provider.dbo.OxfordCurrentProviderInformation.Phone = PE.provphone, 
+            Provider.dbo.OxfordCurrentProviderInformation.Fax = PE.provFax, 
+            Provider.dbo.OxfordCurrentProviderInformation.Email = PE.INETADDRESS
+      FROM Provider.dbo.OxfordCurrentProviderInformation as Provider.dbo.OxfordCurrentProviderInformation
+      INNER JOIN Provider.dbo.T_ProviderElectronics as PE ON PE.AcnProvID = Provider.dbo.OxfordCurrentProviderInformation.ACNPROVID ;
 
       
-      UPDATE  OCPI 
-      SET   OCPI.SSN = PI.ProvSSN,--'999999999',
-            OCPI.First_Name = PI.ProvFirstName,
-            OCPI.Last_Name = PI.ProvLastName,
-            OCPI.MI = PI.ProvMI,
-            OCPI.Gender = PI.ProvSex,
-            OCPI.DOB = PI.ProvDOB,--'01/01/1980',
-            OCPI.Medicare_Number = PI.MedicareNumber,
-            OCPI.UPIN = PI.UniqueProviderID,
-            OCPI.MedicalSchoolDegree = PI.ProvSpec 
-      FROM OxfordCurrentProviderInformation AS OCPI
-      INNER JOIN Provider.dbo.T_ProviderInformation as PI ON PI.ProviderID = OCPI.ProviderID ;
+      UPDATE  Provider.dbo.OxfordCurrentProviderInformation 
+      SET   Provider.dbo.OxfordCurrentProviderInformation.SSN = PI.ProvSSN,--'999999999',
+            Provider.dbo.OxfordCurrentProviderInformation.First_Name = PI.ProvFirstName,
+            Provider.dbo.OxfordCurrentProviderInformation.Last_Name = PI.ProvLastName,
+            Provider.dbo.OxfordCurrentProviderInformation.MI = PI.ProvMI,
+            Provider.dbo.OxfordCurrentProviderInformation.Gender = PI.ProvSex,
+            Provider.dbo.OxfordCurrentProviderInformation.DOB = PI.ProvDOB,--'01/01/1980',
+            Provider.dbo.OxfordCurrentProviderInformation.Medicare_Number = PI.MedicareNumber,
+            Provider.dbo.OxfordCurrentProviderInformation.UPIN = PI.UniqueProviderID,
+            Provider.dbo.OxfordCurrentProviderInformation.MedicalSchoolDegree = PI.ProvSpec 
+      FROM OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+      INNER JOIN Provider.dbo.T_ProviderInformation as PI ON PI.ProviderID = Provider.dbo.OxfordCurrentProviderInformation.ProviderID ;
 
       
-      UPDATE  OCPI 
-      SET   OCPI.Clinic_Name = OI.ClinicName,
-            OCPI.PracticeAddress_1 = OI.LocAddress1,
-            OCPI.PracticeAddress_2 = OI.LocAddress2,
-            OCPI.PracticeCity = OI.LocCity,
-            OCPI.PracticeState = OI.LocState,
-            OCPI.PracticeZip = OI.LocZip,
-            OCPI.PracticeCounty = OI.County,
-            OCPI.Payment_Address_1 = OI.MailAddress1,
-            OCPI.Payment_Address_2 = OI.MailAddress2,
-            OCPI.Payment_City = OI.MailCity,
-            OCPI.Payment_State = OI.MailState,
-            OCPI.Payment_Zip = OI.MailZip,
-            OCPI.Correspondence_Address_1 = OI.AuthRespAddress1,
-            OCPI.Correspondence_Address_2 = OI.AuthRespAddress2,
-            OCPI.Correspondence_City = OI.AuthRespCity,
-            OCPI.Correspondence_State = OI.AuthRespState,
-            OCPI.Correspondence_Zip = OI.AuthRespZip,
-            OCPI.Medicaid = PLP.MedicaidNumber,
-            OCPI.PrimaryLocation = PLP.PrimaryLoc
+      UPDATE  Provider.dbo.OxfordCurrentProviderInformation 
+      SET   Provider.dbo.OxfordCurrentProviderInformation.Clinic_Name = OI.ClinicName,
+            Provider.dbo.OxfordCurrentProviderInformation.PracticeAddress_1 = OI.LocAddress1,
+            Provider.dbo.OxfordCurrentProviderInformation.PracticeAddress_2 = OI.LocAddress2,
+            Provider.dbo.OxfordCurrentProviderInformation.PracticeCity = OI.LocCity,
+            Provider.dbo.OxfordCurrentProviderInformation.PracticeState = OI.LocState,
+            Provider.dbo.OxfordCurrentProviderInformation.PracticeZip = OI.LocZip,
+            Provider.dbo.OxfordCurrentProviderInformation.PracticeCounty = OI.County,
+            Provider.dbo.OxfordCurrentProviderInformation.Payment_Address_1 = OI.MailAddress1,
+            Provider.dbo.OxfordCurrentProviderInformation.Payment_Address_2 = OI.MailAddress2,
+            Provider.dbo.OxfordCurrentProviderInformation.Payment_City = OI.MailCity,
+            Provider.dbo.OxfordCurrentProviderInformation.Payment_State = OI.MailState,
+            Provider.dbo.OxfordCurrentProviderInformation.Payment_Zip = OI.MailZip,
+            Provider.dbo.OxfordCurrentProviderInformation.Correspondence_Address_1 = OI.AuthRespAddress1,
+            Provider.dbo.OxfordCurrentProviderInformation.Correspondence_Address_2 = OI.AuthRespAddress2,
+            Provider.dbo.OxfordCurrentProviderInformation.Correspondence_City = OI.AuthRespCity,
+            Provider.dbo.OxfordCurrentProviderInformation.Correspondence_State = OI.AuthRespState,
+            Provider.dbo.OxfordCurrentProviderInformation.Correspondence_Zip = OI.AuthRespZip,
+            Provider.dbo.OxfordCurrentProviderInformation.Medicaid = PLP.MedicaidNumber,
+            Provider.dbo.OxfordCurrentProviderInformation.PrimaryLocation = PLP.PrimaryLoc
 
-      FROM Provider.dbo.OxfordCurrentProviderInformation AS OCPI
-        INNER JOIN Provider.dbo.T_ProviderLocationPointer As PLP ON OCPI.ProviderID = PLP.ProviderID 
-        AND OCPI.Acn_Location_ID = PLP.OfficeLocationID 
+      FROM Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+        INNER JOIN Provider.dbo.T_ProviderLocationPointer As PLP ON Provider.dbo.OxfordCurrentProviderInformation.ProviderID = PLP.ProviderID 
+        AND Provider.dbo.OxfordCurrentProviderInformation.Acn_Location_ID = PLP.OfficeLocationID 
         INNER JOIN Provider.dbo.T_OfficeLocationInfo AS OI ON PLP.OfficeLocationID = OI.OfficeLocationID;
         
       
-      UPDATE OCPI 
-      SET   OCPI.MarketNumber = UMZ.MarketNumber
-      FROM  OxfordCurrentProviderInformation AS OCPI
-      INNER JOIN provider.dbo.tblUnetMarketsByZipCode AS UMZ ON OCPI.PracticeZip = UMZ.ZipCode;
+      UPDATE Provider.dbo.OxfordCurrentProviderInformation 
+      SET   Provider.dbo.OxfordCurrentProviderInformation.MarketNumber = UMZ.MarketNumber
+      FROM  OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+      INNER JOIN provider.dbo.tblUnetMarketsByZipCode AS UMZ ON Provider.dbo.OxfordCurrentProviderInformation.PracticeZip = UMZ.ZipCode;
 
       
-      UPDATE OCPI
-      SET   OCPI.TIN = PTP.TinNumber,
-            OCPI.TIN_EffectiveDate = PTP.EffDate,
-            OCPI.Payment_Name = TI.Owner,
-            OCPI.TinOwner = TI.Owner
-      FROM OxfordCurrentProviderInformation AS OCPI
-        INNER JOIN Provider.dbo.T_ProvLocTinPointer AS PTP ON OCPI.ProviderID = PTP.ProviderID 
+      UPDATE Provider.dbo.OxfordCurrentProviderInformation
+      SET   Provider.dbo.OxfordCurrentProviderInformation.TIN = PTP.TinNumber,
+            Provider.dbo.OxfordCurrentProviderInformation.TIN_EffectiveDate = PTP.EffDate,
+            Provider.dbo.OxfordCurrentProviderInformation.Payment_Name = TI.Owner,
+            Provider.dbo.OxfordCurrentProviderInformation.TinOwner = TI.Owner
+      FROM OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+        INNER JOIN Provider.dbo.T_ProvLocTinPointer AS PTP ON Provider.dbo.OxfordCurrentProviderInformation.ProviderID = PTP.ProviderID 
         INNER JOIN Provider.dbo.T_TinInfo AS TI ON PTP.TinNumber = TI.TinNumber
-        AND OCPI.Acn_Location_ID = PTP.OfficeLocationID 
+        AND Provider.dbo.OxfordCurrentProviderInformation.Acn_Location_ID = PTP.OfficeLocationID 
       WHERE PTP.TermDate IS NULL;
 
       
-      UPDATE OCPI 
-      SET   OCPI.State_License_Number = PLI.LicenseNumber,
-            OCPI.State_License_Expiration_Date = PLI.LicenseExpireDate
-      FROM OxfordCurrentProviderInformation AS OCPI
-        INNER JOIN Provider.dbo.tblProviderLicenseInfo AS PLI ON OCPI.ProviderID = PLI.ProviderID  
-        AND OCPI.PracticeSpecialty = PLI.SpecialtyCode  
-        AND OCPI.PracticeState = PLI.State;                            
+      UPDATE Provider.dbo.OxfordCurrentProviderInformation 
+      SET   Provider.dbo.OxfordCurrentProviderInformation.State_License_Number = PLI.LicenseNumber,
+            Provider.dbo.OxfordCurrentProviderInformation.State_License_Expiration_Date = PLI.LicenseExpireDate
+      FROM OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+        INNER JOIN Provider.dbo.tblProviderLicenseInfo AS PLI ON Provider.dbo.OxfordCurrentProviderInformation.ProviderID = PLI.ProviderID  
+        AND Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty = PLI.SpecialtyCode  
+        AND Provider.dbo.OxfordCurrentProviderInformation.PracticeState = PLI.State;                            
       
-      UPDATE  OCPI 
-      SET   OCPI.Malp_Specific_Limit = MPL.PerIncidentAmount,
-            OCPI.Malp_Aggregate_Limit = MPL.AggregateAmount,
-            OCPI.MedicalSchool = PSI.CollegeAttended,
-            OCPI.CompletionDate = PSI.CollegeGradDate
-      FROM OxfordCurrentProviderInformation AS OCPI
-            INNER JOIN Provider.dbo.ProviderSpecialtyInfo AS PSI ON OCPI.ProviderID = PSI.ProviderID 
-            AND OCPI.PracticeSpecialty = PSI.SpecialtyCode 
+      UPDATE  Provider.dbo.OxfordCurrentProviderInformation 
+      SET   Provider.dbo.OxfordCurrentProviderInformation.Malp_Specific_Limit = MPL.PerIncidentAmount,
+            Provider.dbo.OxfordCurrentProviderInformation.Malp_Aggregate_Limit = MPL.AggregateAmount,
+            Provider.dbo.OxfordCurrentProviderInformation.MedicalSchool = PSI.CollegeAttended,
+            Provider.dbo.OxfordCurrentProviderInformation.CompletionDate = PSI.CollegeGradDate
+      FROM OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+            INNER JOIN Provider.dbo.ProviderSpecialtyInfo AS PSI ON Provider.dbo.OxfordCurrentProviderInformation.ProviderID = PSI.ProviderID 
+            AND Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty = PSI.SpecialtyCode 
             LEFT OUTER JOIN Provider.dbo.MalpracticePolicyLimits AS MPL ON PSI.MalpracticePolicyLimitsCode = MPL.Code;
 
 
@@ -106,10 +106,10 @@ FROM
       SELECT     OPPI.* 
       INTO #tempProvTerminations
       FROM  Provider.dbo.OxfordPreviousProviderInformation AS OPPI 
-            LEFT OUTER JOIN Provider.dbo.OxfordCurrentProviderInformation AS OCPI ON OPPI.PracticeSpecialty = OCPI.PracticeSpecialty  
-            AND OPPI.ClientID = OCPI.ClientID
-            AND OPPI.ProviderID = OCPI.ProviderID
-      WHERE OCPI.ProviderID IS NULL ;
+            LEFT OUTER JOIN Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation ON OPPI.PracticeSpecialty = Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty  
+            AND OPPI.ClientID = Provider.dbo.OxfordCurrentProviderInformation.ClientID
+            AND OPPI.ProviderID = Provider.dbo.OxfordCurrentProviderInformation.ProviderID
+      WHERE Provider.dbo.OxfordCurrentProviderInformation.ProviderID IS NULL ;
       
       INSERT INTO Provider.dbo.OxfordProviderChangeAddTerm (
         ProviderID,
@@ -120,12 +120,12 @@ FROM
       From #tempProvTerminations ;
 
       
-      SELECT     OCPI.*  
+      SELECT     Provider.dbo.OxfordCurrentProviderInformation.*  
       INTO #tempProvAdditions
-      FROM       Provider.dbo.OxfordCurrentProviderInformation AS OCPI 
-           LEFT OUTER JOIN Provider.dbo.OxfordPreviousProviderInformation AS OPPI ON OCPI.PracticeSpecialty = OPPI.PracticeSpecialty 
-           AND OCPI.ClientID = OPPI.ClientID 
-           AND OCPI.ProviderID = OPPI.ProviderID
+      FROM       Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation 
+           LEFT OUTER JOIN Provider.dbo.OxfordPreviousProviderInformation AS OPPI ON Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty = OPPI.PracticeSpecialty 
+           AND Provider.dbo.OxfordCurrentProviderInformation.ClientID = OPPI.ClientID 
+           AND Provider.dbo.OxfordCurrentProviderInformation.ProviderID = OPPI.ProviderID
       WHERE      OPPI.ProviderID IS NULL ;
 
       INSERT INTO Provider.dbo.OxfordProviderChangeAddTerm (
@@ -139,11 +139,11 @@ FROM
       SELECT DISTINCT OPPI.* 
       INTO #tempTinTermination
       FROM Provider.dbo.OxfordPreviousProviderInformation AS OPPI
-        LEFT JOIN Provider.dbo.OxfordCurrentProviderInformation AS OCPI ON OPPI.TIN = OCPI.TIN 
-        AND OPPI.ProviderID = OCPI.ProviderID
-        AND OPPI.PracticeSpecialty = OCPI.PracticeSpecialty 
-        AND OPPI.ClientID = OCPI.ClientID
-      WHERE OCPI.TIN Is NULL;
+        LEFT JOIN Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation ON OPPI.TIN = Provider.dbo.OxfordCurrentProviderInformation.TIN 
+        AND OPPI.ProviderID = Provider.dbo.OxfordCurrentProviderInformation.ProviderID
+        AND OPPI.PracticeSpecialty = Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty 
+        AND OPPI.ClientID = Provider.dbo.OxfordCurrentProviderInformation.ClientID
+      WHERE Provider.dbo.OxfordCurrentProviderInformation.TIN Is NULL;
 
       
       DELETE TT
@@ -154,63 +154,63 @@ FROM
       SELECT OPPI.*
       INTO #tempLocTermination
       FROM Provider.dbo.OxfordPreviousProviderInformation AS OPPI
-          LEFT JOIN Provider.dbo.OxfordCurrentProviderInformation AS OCPI ON OPPI.ACNPROVID = OCPI.ACNPROVID
-          AND OPPI.PracticeSpecialty = OCPI.PracticeSpecialty
-          AND OPPI.ClientID = OCPI.ClientID
-      WHERE     OCPI.ACNPROVID IS NULL ;
+          LEFT JOIN Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation ON OPPI.ACNPROVID = Provider.dbo.OxfordCurrentProviderInformation.ACNPROVID
+          AND OPPI.PracticeSpecialty = Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty
+          AND OPPI.ClientID = Provider.dbo.OxfordCurrentProviderInformation.ClientID
+      WHERE     Provider.dbo.OxfordCurrentProviderInformation.ACNPROVID IS NULL ;
       
       DELETE  LT 
       FROM #tempLocTermination LT
       INNER JOIN #tempProvTerminations as PT on LT.ProviderID = PT.ProviderID ;
 
       
-      SELECT OCPI.*
+      SELECT Provider.dbo.OxfordCurrentProviderInformation.*
       INTO #tempLocAddition
-      FROM Provider.dbo.OxfordCurrentProviderInformation AS OCPI
-        LEFT JOIN Provider.dbo.OxfordPreviousProviderInformation AS OPPI ON OCPI.Acn_Location_ID = OPPI.Acn_Location_ID 
-        AND OCPI.ProviderID = OPPI.ProviderID
-        AND OCPI.PracticeSpecialty = OPPI.PracticeSpecialty 
-        AND OCPI.ClientID = OPPI.ClientID
+      FROM Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+        LEFT JOIN Provider.dbo.OxfordPreviousProviderInformation AS OPPI ON Provider.dbo.OxfordCurrentProviderInformation.Acn_Location_ID = OPPI.Acn_Location_ID 
+        AND Provider.dbo.OxfordCurrentProviderInformation.ProviderID = OPPI.ProviderID
+        AND Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty = OPPI.PracticeSpecialty 
+        AND Provider.dbo.OxfordCurrentProviderInformation.ClientID = OPPI.ClientID
       WHERE OPPI.Acn_Location_ID Is Null;
       DELETE  LA
       From #tempLocAddition LA
       Inner JOIN #tempProvAdditions as PA on LA.ProviderID = PA.ProviderID ;
 
-      Select DISTINCT OCPI.* 
+      Select DISTINCT Provider.dbo.OxfordCurrentProviderInformation.* 
       INTO #tempOxfordProviderChangeAddTerm
-      FROM  Provider.dbo.OxfordCurrentProviderInformation as OCPI 
-      INNER JOIN Provider.dbo.OxfordPreviousProviderInformation AS OPPI ON OCPI.ACNPROVID = OPPI.ACNPROVID 
-      AND OCPI.ClientID = OPPI.ClientID
-      AND OCPI.PracticeSpecialty = OPPI.PracticeSpecialty
+      FROM  Provider.dbo.OxfordCurrentProviderInformation as Provider.dbo.OxfordCurrentProviderInformation 
+      INNER JOIN Provider.dbo.OxfordPreviousProviderInformation AS OPPI ON Provider.dbo.OxfordCurrentProviderInformation.ACNPROVID = OPPI.ACNPROVID 
+      AND Provider.dbo.OxfordCurrentProviderInformation.ClientID = OPPI.ClientID
+      AND Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty = OPPI.PracticeSpecialty
       WHERE 
-            ISNULL(OCPI.Last_Name,'') <> ISNULL(OPPI.Last_Name,'') OR
-            ISNULL(OCPI.First_Name,'') <> ISNULL(OPPI.First_Name,'') OR
-            ISNULL(OCPI.MI,'') <> ISNULL(OPPI.MI,'') OR
-            ISNULL(OCPI.Gender,'') <> ISNULL(OPPI.Gender,'') OR
-            ISNULL(OCPI.DOB,'') <> ISNULL(OPPI.DOB,'') OR
-            --( LEN(RTRIM(ISNULL(OCPI.SSN,'')))> 9 AND LEN(RTRIM(ISNULL(OPPI.SSN,'')))> 9 
-            --AND ISNULL(GLOBAL.dbo.fn_decrypt(OCPI.SSN)+RIGHT(OCPI.SSN,4),'') <> ISNULL(GLOBAL.dbo.fn_decrypt(OPPI.SSN)+RIGHT(OPPI.SSN,4),'')) OR   
-            ISNULL(OCPI.TIN_EffectiveDate,'') <> ISNULL(OPPI.TIN_EffectiveDate,'') OR
-            ISNULL(OCPI.TinOwner,'') <> ISNULL(OPPI.TinOwner,'') OR
-            ISNULL(OCPI.State_License_Number,'') <> ISNULL(OPPI.State_License_Number,'') OR
-            ISNULL(OCPI.State_License_Expiration_Date,'') <> ISNULL(OPPI.State_License_Expiration_Date,'') OR
-            ISNULL(OCPI.TIN_EffectiveDate,'') <> ISNULL(OPPI.TIN_EffectiveDate,'') OR
-            ISNULL(OCPI.PracticeAddress_1,'') <> ISNULL(OPPI.PracticeAddress_1,'') OR
-            ISNULL(OCPI.PracticeAddress_2,'') <> ISNULL(OPPI.PracticeAddress_2,'') OR
-            ISNULL(OCPI.PracticeCity,'') <> ISNULL(OPPI.PracticeCity,'') OR
-            ISNULL(OCPI.PracticeState,'') <> ISNULL(OPPI.PracticeState,'') OR
-            ISNULL(OCPI.PracticeZip,'') <> ISNULL(OPPI.PracticeZip,'') OR
-            ISNULL(OCPI.PracticeCounty,'') <> ISNULL(OPPI.PracticeCounty,'') OR
-            ISNULL(OCPI.Phone,'') <> ISNULL(OPPI.Phone,'') OR
-            ISNULL(OCPI.Fax,'') <> ISNULL(OPPI.Fax,'') OR
-            ISNULL(OCPI.TIN,'') <> ISNULL(OPPI.TIN,'') OR
-            --ISNULL(OCPI.Clinic_Name,'') <> ISNULL(OPPI.Clinic_Name,'') OR
-            ISNULL(OCPI.Payment_Name,'') <> ISNULL(OPPI.Payment_Name,'') OR
-            ISNULL(OCPI.Payment_Address_1,'') <> ISNULL(OPPI.Payment_Address_1,'') OR
-            ISNULL(OCPI.Payment_Address_2,'') <> ISNULL(OPPI.Payment_Address_2,'') OR
-            ISNULL(OCPI.Payment_City,'') <> ISNULL(OPPI.Payment_City,'') OR
-            ISNULL(OCPI.Payment_State,'') <> ISNULL(OPPI.Payment_State,'') OR
-            ISNULL(OCPI.Payment_Zip,'') <> ISNULL(OPPI.Payment_Zip,'') ;
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Last_Name,'') <> ISNULL(OPPI.Last_Name,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.First_Name,'') <> ISNULL(OPPI.First_Name,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.MI,'') <> ISNULL(OPPI.MI,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Gender,'') <> ISNULL(OPPI.Gender,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.DOB,'') <> ISNULL(OPPI.DOB,'') OR
+            --( LEN(RTRIM(ISNULL(Provider.dbo.OxfordCurrentProviderInformation.SSN,'')))> 9 AND LEN(RTRIM(ISNULL(OPPI.SSN,'')))> 9 
+            --AND ISNULL(GLOBAL.dbo.fn_decrypt(Provider.dbo.OxfordCurrentProviderInformation.SSN)+RIGHT(Provider.dbo.OxfordCurrentProviderInformation.SSN,4),'') <> ISNULL(GLOBAL.dbo.fn_decrypt(OPPI.SSN)+RIGHT(OPPI.SSN,4),'')) OR   
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.TIN_EffectiveDate,'') <> ISNULL(OPPI.TIN_EffectiveDate,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.TinOwner,'') <> ISNULL(OPPI.TinOwner,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.State_License_Number,'') <> ISNULL(OPPI.State_License_Number,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.State_License_Expiration_Date,'') <> ISNULL(OPPI.State_License_Expiration_Date,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.TIN_EffectiveDate,'') <> ISNULL(OPPI.TIN_EffectiveDate,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.PracticeAddress_1,'') <> ISNULL(OPPI.PracticeAddress_1,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.PracticeAddress_2,'') <> ISNULL(OPPI.PracticeAddress_2,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.PracticeCity,'') <> ISNULL(OPPI.PracticeCity,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.PracticeState,'') <> ISNULL(OPPI.PracticeState,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.PracticeZip,'') <> ISNULL(OPPI.PracticeZip,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.PracticeCounty,'') <> ISNULL(OPPI.PracticeCounty,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Phone,'') <> ISNULL(OPPI.Phone,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Fax,'') <> ISNULL(OPPI.Fax,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.TIN,'') <> ISNULL(OPPI.TIN,'') OR
+            --ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Clinic_Name,'') <> ISNULL(OPPI.Clinic_Name,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Payment_Name,'') <> ISNULL(OPPI.Payment_Name,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Payment_Address_1,'') <> ISNULL(OPPI.Payment_Address_1,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Payment_Address_2,'') <> ISNULL(OPPI.Payment_Address_2,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Payment_City,'') <> ISNULL(OPPI.Payment_City,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Payment_State,'') <> ISNULL(OPPI.Payment_State,'') OR
+            ISNULL(Provider.dbo.OxfordCurrentProviderInformation.Payment_Zip,'') <> ISNULL(OPPI.Payment_Zip,'') ;
 
     INSERT INTO Provider.dbo.OxfordProviderChangeAddTerm
        (ProviderID,
@@ -250,71 +250,71 @@ FROM
     DELETE FROM Provider.dbo.OxfordProviderTransfer;
     
     SELECT DISTINCT
-      OCPI.ACNPROVID,                 
-      OCPI.ClientID, 
-      OCPI.PracticeSpecialty,             
-      OCPI.ProviderID, 
-      OCPI.Acn_Location_ID,               
-      OCPI.Last_Name, 
-      OCPI.First_Name,                
-      OCPI.MI, 
-      OCPI.Degree,                    
-      OCPI.Gender, 
-      OCPI.DOB,                   
-      OCPI.SSN, 
-      OCPI.UPIN,                  
-      OCPI.Medicare_Number, 
-      OCPI.Medicaid,                  
-      OCPI.TIN, 
-      OCPI.TinOwner,                  
-      OCPI.TIN_EffectiveDate, 
-      OCPI.State_License_Number,          
-      OCPI.State_License_Expiration_Date, 
-      OCPI.PracticeAddress_1,             
-      OCPI.PracticeAddress_2, 
-      OCPI.PracticeCity,              
-      OCPI.PracticeState, 
-      OCPI.PracticeZip,               
-      OCPI.PracticeCounty, 
-      OCPI.Phone,                     
-      OCPI.Fax, 
-      OCPI.Credential_Date,               
-      OCPI.MedicalSchool, 
-      OCPI.MedicalSchoolDegree,           
-      OCPI.CompletionDate, 
-      OCPI.Clinic_Name,               
-      OCPI.Payment_Name, 
-      OCPI.Payment_Address_1,             
-      OCPI.Payment_Address_2, 
-      OCPI.Payment_City,              
-      OCPI.Payment_State, 
-      OCPI.Payment_Zip,               
-      OCPI.Correspondence_Address_1, 
-      OCPI.Correspondence_Address_2,          
-      OCPI.Correspondence_City, 
-      OCPI.Correspondence_State,          
-      OCPI.Correspondence_Zip, 
-      OCPI.Email,                     
-      OCPI.ParticipationEffectiveDate, 
-      OCPI.ParticipationTerminationDate,      
-      OCPI.Malp_Specific_Limit, 
-      OCPI.Malp_Aggregate_Limit,          
-      OCPI.NameChanged, 
-      OCPI.LocationTerminationDate,           
-      OCPI.LocationEffectiveDate, 
-      OCPI.EffectiveDateOf_All_Non_Tin_Changes,   
-      OCPI.TerminationReason, 
-      OCPI.MarketNumber,              
-      OCPI.TIN_LocationFlag, 
-      OCPI.Location_Tin_Flag,             
-      OCPI.PrimaryLocation, 
-      OCPI.MinContractEffDate,            
-      OCPI.BillingAddressID,
+      Provider.dbo.OxfordCurrentProviderInformation.ACNPROVID,                 
+      Provider.dbo.OxfordCurrentProviderInformation.ClientID, 
+      Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty,             
+      Provider.dbo.OxfordCurrentProviderInformation.ProviderID, 
+      Provider.dbo.OxfordCurrentProviderInformation.Acn_Location_ID,               
+      Provider.dbo.OxfordCurrentProviderInformation.Last_Name, 
+      Provider.dbo.OxfordCurrentProviderInformation.First_Name,                
+      Provider.dbo.OxfordCurrentProviderInformation.MI, 
+      Provider.dbo.OxfordCurrentProviderInformation.Degree,                    
+      Provider.dbo.OxfordCurrentProviderInformation.Gender, 
+      Provider.dbo.OxfordCurrentProviderInformation.DOB,                   
+      Provider.dbo.OxfordCurrentProviderInformation.SSN, 
+      Provider.dbo.OxfordCurrentProviderInformation.UPIN,                  
+      Provider.dbo.OxfordCurrentProviderInformation.Medicare_Number, 
+      Provider.dbo.OxfordCurrentProviderInformation.Medicaid,                  
+      Provider.dbo.OxfordCurrentProviderInformation.TIN, 
+      Provider.dbo.OxfordCurrentProviderInformation.TinOwner,                  
+      Provider.dbo.OxfordCurrentProviderInformation.TIN_EffectiveDate, 
+      Provider.dbo.OxfordCurrentProviderInformation.State_License_Number,          
+      Provider.dbo.OxfordCurrentProviderInformation.State_License_Expiration_Date, 
+      Provider.dbo.OxfordCurrentProviderInformation.PracticeAddress_1,             
+      Provider.dbo.OxfordCurrentProviderInformation.PracticeAddress_2, 
+      Provider.dbo.OxfordCurrentProviderInformation.PracticeCity,              
+      Provider.dbo.OxfordCurrentProviderInformation.PracticeState, 
+      Provider.dbo.OxfordCurrentProviderInformation.PracticeZip,               
+      Provider.dbo.OxfordCurrentProviderInformation.PracticeCounty, 
+      Provider.dbo.OxfordCurrentProviderInformation.Phone,                     
+      Provider.dbo.OxfordCurrentProviderInformation.Fax, 
+      Provider.dbo.OxfordCurrentProviderInformation.Credential_Date,               
+      Provider.dbo.OxfordCurrentProviderInformation.MedicalSchool, 
+      Provider.dbo.OxfordCurrentProviderInformation.MedicalSchoolDegree,           
+      Provider.dbo.OxfordCurrentProviderInformation.CompletionDate, 
+      Provider.dbo.OxfordCurrentProviderInformation.Clinic_Name,               
+      Provider.dbo.OxfordCurrentProviderInformation.Payment_Name, 
+      Provider.dbo.OxfordCurrentProviderInformation.Payment_Address_1,             
+      Provider.dbo.OxfordCurrentProviderInformation.Payment_Address_2, 
+      Provider.dbo.OxfordCurrentProviderInformation.Payment_City,              
+      Provider.dbo.OxfordCurrentProviderInformation.Payment_State, 
+      Provider.dbo.OxfordCurrentProviderInformation.Payment_Zip,               
+      Provider.dbo.OxfordCurrentProviderInformation.Correspondence_Address_1, 
+      Provider.dbo.OxfordCurrentProviderInformation.Correspondence_Address_2,          
+      Provider.dbo.OxfordCurrentProviderInformation.Correspondence_City, 
+      Provider.dbo.OxfordCurrentProviderInformation.Correspondence_State,          
+      Provider.dbo.OxfordCurrentProviderInformation.Correspondence_Zip, 
+      Provider.dbo.OxfordCurrentProviderInformation.Email,                     
+      Provider.dbo.OxfordCurrentProviderInformation.ParticipationEffectiveDate, 
+      Provider.dbo.OxfordCurrentProviderInformation.ParticipationTerminationDate,      
+      Provider.dbo.OxfordCurrentProviderInformation.Malp_Specific_Limit, 
+      Provider.dbo.OxfordCurrentProviderInformation.Malp_Aggregate_Limit,          
+      Provider.dbo.OxfordCurrentProviderInformation.NameChanged, 
+      Provider.dbo.OxfordCurrentProviderInformation.LocationTerminationDate,           
+      Provider.dbo.OxfordCurrentProviderInformation.LocationEffectiveDate, 
+      Provider.dbo.OxfordCurrentProviderInformation.EffectiveDateOf_All_Non_Tin_Changes,   
+      Provider.dbo.OxfordCurrentProviderInformation.TerminationReason, 
+      Provider.dbo.OxfordCurrentProviderInformation.MarketNumber,              
+      Provider.dbo.OxfordCurrentProviderInformation.TIN_LocationFlag, 
+      Provider.dbo.OxfordCurrentProviderInformation.Location_Tin_Flag,             
+      Provider.dbo.OxfordCurrentProviderInformation.PrimaryLocation, 
+      Provider.dbo.OxfordCurrentProviderInformation.MinContractEffDate,            
+      Provider.dbo.OxfordCurrentProviderInformation.BillingAddressID,
       PCAT.TransferCode
-    FROM Provider.dbo.OxfordCurrentProviderInformation AS OCPI
-      INNER JOIN Provider.dbo.OxfordProviderChangeAddTerm AS PCAT ON OCPI.ProviderID = PCAT.ProviderID
+    FROM Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+      INNER JOIN Provider.dbo.OxfordProviderChangeAddTerm AS PCAT ON Provider.dbo.OxfordCurrentProviderInformation.ProviderID = PCAT.ProviderID
     WHERE PCAT.TransferCode IN ('C','A') AND
-    OCPI.TIN IS NOT NULL;
+    Provider.dbo.OxfordCurrentProviderInformation.TIN IS NOT NULL;
 
     
     UPDATE OPT
@@ -856,7 +856,7 @@ FROM
       -- Record
       'ADD' +
       CONVERT( CHAR( 9 ), 'AC'+ OPT.ProviderID) +
-      --CONVERT(CHAR (12),LTRIM(STR(OCPI.Acn_Location_ID) + '000000')) +
+      --CONVERT(CHAR (12),LTRIM(STR(Provider.dbo.OxfordCurrentProviderInformation.Acn_Location_ID) + '000000')) +
       CONVERT(CHAR (12), '000000' + LTRIM(STR(OPT.Acn_Location_ID))) +
       CONVERT( CHAR( 32 ), ISNULL( OPT.PracticeAddress_1, '' ) + ' ' + ISNULL(OPT.PracticeAddress_2, '' ) ) +
       CONVERT( CHAR( 28 ), OPT.PracticeCity ) +
@@ -937,7 +937,7 @@ FROM
       SPACE( 225 ) -- Filler Space
     FROM  OxfordProviderTransfer AS OPT
     WHERE OPT.Location_Tin_Flag = '1' 
-    --AND (NOT(OCPI.Fax Is NULL)) OR OCPI.Fax <> ''
+    --AND (NOT(Provider.dbo.OxfordCurrentProviderInformation.Fax Is NULL)) OR Provider.dbo.OxfordCurrentProviderInformation.Fax <> ''
 
     UNION
 
@@ -1012,7 +1012,7 @@ FROM
 
     -- UPDATE Temp Table Created above with Min Cont Date
     INSERT INTO #Temp_Market (ProviderID,MarketNumber)
-    --SELECT OCPI.ProviderID, Min(Convert(varchar(10),OCPI.ParticipationEffectiveDate,101)) AS MinContEffDate
+    --SELECT Provider.dbo.OxfordCurrentProviderInformation.ProviderID, Min(Convert(varchar(10),Provider.dbo.OxfordCurrentProviderInformation.ParticipationEffectiveDate,101)) AS MinContEffDate
     SELECT      Distinct OPT.ProviderID, OPT.MarketNumber
     FROM        OxfordProviderTransfer AS OPT
     WHERE OPT.PrimaryLocation = '1';
