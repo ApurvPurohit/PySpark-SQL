@@ -11,14 +11,14 @@ FROM
   WHERE     
       (PLP.TermDate IS NULL) AND (PCON.ProviderSpecialty IN ('DC')) AND (PCON.ClientID = '160') 
       AND (PLP.ProviderID NOT IN ('693301', '693302', '999999', '663910')) 
-      AND (PCON.ContTermDate IS NULL OR   PCON.ContTermDate > GETDATE() + 40)
+      AND (PCON.ContTermDate IS NULL OR   PCON.ContTermDate > GETDATE() + 40);
 
 
       UPDATE Provider.dbo.OxfordCurrentProviderInformation 
       SET   Provider.dbo.OxfordCurrentProviderInformation.Phone = PE.provphone, 
             Provider.dbo.OxfordCurrentProviderInformation.Fax = PE.provFax, 
             Provider.dbo.OxfordCurrentProviderInformation.Email = PE.INETADDRESS
-      FROM Provider.dbo.OxfordCurrentProviderInformation as Provider.dbo.OxfordCurrentProviderInformation
+      FROM Provider.dbo.OxfordCurrentProviderInformation
       INNER JOIN Provider.dbo.T_ProviderElectronics as PE ON PE.AcnProvID = Provider.dbo.OxfordCurrentProviderInformation.ACNPROVID ;
 
       
@@ -32,7 +32,7 @@ FROM
             Provider.dbo.OxfordCurrentProviderInformation.Medicare_Number = PI.MedicareNumber,
             Provider.dbo.OxfordCurrentProviderInformation.UPIN = PI.UniqueProviderID,
             Provider.dbo.OxfordCurrentProviderInformation.MedicalSchoolDegree = PI.ProvSpec 
-      FROM OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+      FROM OxfordCurrentProviderInformation
       INNER JOIN Provider.dbo.T_ProviderInformation as PI ON PI.ProviderID = Provider.dbo.OxfordCurrentProviderInformation.ProviderID ;
 
       
@@ -57,15 +57,15 @@ FROM
             Provider.dbo.OxfordCurrentProviderInformation.Medicaid = PLP.MedicaidNumber,
             Provider.dbo.OxfordCurrentProviderInformation.PrimaryLocation = PLP.PrimaryLoc
 
-      FROM Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
-        INNER JOIN Provider.dbo.T_ProviderLocationPointer As PLP ON Provider.dbo.OxfordCurrentProviderInformation.ProviderID = PLP.ProviderID 
+      FROM Provider.dbo.OxfordCurrentProviderInformation
+        INNER JOIN Provider.dbo.T_ProviderLocationPointer As PLP ON dbo.OxfordCurrentProviderInformation.ProviderID = PLP.ProviderID 
         AND Provider.dbo.OxfordCurrentProviderInformation.Acn_Location_ID = PLP.OfficeLocationID 
         INNER JOIN Provider.dbo.T_OfficeLocationInfo AS OI ON PLP.OfficeLocationID = OI.OfficeLocationID;
         
       
       UPDATE Provider.dbo.OxfordCurrentProviderInformation 
       SET   Provider.dbo.OxfordCurrentProviderInformation.MarketNumber = UMZ.MarketNumber
-      FROM  OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+      FROM  OxfordCurrentProviderInformation
       INNER JOIN provider.dbo.tblUnetMarketsByZipCode AS UMZ ON Provider.dbo.OxfordCurrentProviderInformation.PracticeZip = UMZ.ZipCode;
 
       
@@ -74,7 +74,7 @@ FROM
             Provider.dbo.OxfordCurrentProviderInformation.TIN_EffectiveDate = PTP.EffDate,
             Provider.dbo.OxfordCurrentProviderInformation.Payment_Name = TI.Owner,
             Provider.dbo.OxfordCurrentProviderInformation.TinOwner = TI.Owner
-      FROM OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+      FROM OxfordCurrentProviderInformation
         INNER JOIN Provider.dbo.T_ProvLocTinPointer AS PTP ON Provider.dbo.OxfordCurrentProviderInformation.ProviderID = PTP.ProviderID 
         INNER JOIN Provider.dbo.T_TinInfo AS TI ON PTP.TinNumber = TI.TinNumber
         AND Provider.dbo.OxfordCurrentProviderInformation.Acn_Location_ID = PTP.OfficeLocationID 
@@ -84,7 +84,7 @@ FROM
       UPDATE Provider.dbo.OxfordCurrentProviderInformation 
       SET   Provider.dbo.OxfordCurrentProviderInformation.State_License_Number = PLI.LicenseNumber,
             Provider.dbo.OxfordCurrentProviderInformation.State_License_Expiration_Date = PLI.LicenseExpireDate
-      FROM OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+      FROM OxfordCurrentProviderInformation
         INNER JOIN Provider.dbo.tblProviderLicenseInfo AS PLI ON Provider.dbo.OxfordCurrentProviderInformation.ProviderID = PLI.ProviderID  
         AND Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty = PLI.SpecialtyCode  
         AND Provider.dbo.OxfordCurrentProviderInformation.PracticeState = PLI.State;                            
@@ -94,7 +94,7 @@ FROM
             Provider.dbo.OxfordCurrentProviderInformation.Malp_Aggregate_Limit = MPL.AggregateAmount,
             Provider.dbo.OxfordCurrentProviderInformation.MedicalSchool = PSI.CollegeAttended,
             Provider.dbo.OxfordCurrentProviderInformation.CompletionDate = PSI.CollegeGradDate
-      FROM OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+      FROM OxfordCurrentProviderInformation
             INNER JOIN Provider.dbo.ProviderSpecialtyInfo AS PSI ON Provider.dbo.OxfordCurrentProviderInformation.ProviderID = PSI.ProviderID 
             AND Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty = PSI.SpecialtyCode 
             LEFT OUTER JOIN Provider.dbo.MalpracticePolicyLimits AS MPL ON PSI.MalpracticePolicyLimitsCode = MPL.Code;
@@ -106,7 +106,7 @@ FROM
       SELECT     OPPI.* 
       INTO #tempProvTerminations
       FROM  Provider.dbo.OxfordPreviousProviderInformation AS OPPI 
-            LEFT OUTER JOIN Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation ON OPPI.PracticeSpecialty = Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty  
+            LEFT OUTER JOIN Provider.dbo.OxfordCurrentProviderInformation ON OPPI.PracticeSpecialty = Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty  
             AND OPPI.ClientID = Provider.dbo.OxfordCurrentProviderInformation.ClientID
             AND OPPI.ProviderID = Provider.dbo.OxfordCurrentProviderInformation.ProviderID
       WHERE Provider.dbo.OxfordCurrentProviderInformation.ProviderID IS NULL ;
@@ -120,9 +120,9 @@ FROM
       From #tempProvTerminations ;
 
       
-      SELECT     Provider.dbo.OxfordCurrentProviderInformation.*  
+      SELECT Provider.dbo.OxfordCurrentProviderInformation.*  
       INTO #tempProvAdditions
-      FROM       Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation 
+      FROM       Provider.dbo.OxfordCurrentProviderInformation 
            LEFT OUTER JOIN Provider.dbo.OxfordPreviousProviderInformation AS OPPI ON Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty = OPPI.PracticeSpecialty 
            AND Provider.dbo.OxfordCurrentProviderInformation.ClientID = OPPI.ClientID 
            AND Provider.dbo.OxfordCurrentProviderInformation.ProviderID = OPPI.ProviderID
@@ -139,7 +139,7 @@ FROM
       SELECT DISTINCT OPPI.* 
       INTO #tempTinTermination
       FROM Provider.dbo.OxfordPreviousProviderInformation AS OPPI
-        LEFT JOIN Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation ON OPPI.TIN = Provider.dbo.OxfordCurrentProviderInformation.TIN 
+        LEFT JOIN Provider.dbo.OxfordCurrentProviderInformation ON OPPI.TIN = Provider.dbo.OxfordCurrentProviderInformation.TIN 
         AND OPPI.ProviderID = Provider.dbo.OxfordCurrentProviderInformation.ProviderID
         AND OPPI.PracticeSpecialty = Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty 
         AND OPPI.ClientID = Provider.dbo.OxfordCurrentProviderInformation.ClientID
@@ -154,7 +154,7 @@ FROM
       SELECT OPPI.*
       INTO #tempLocTermination
       FROM Provider.dbo.OxfordPreviousProviderInformation AS OPPI
-          LEFT JOIN Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation ON OPPI.ACNPROVID = Provider.dbo.OxfordCurrentProviderInformation.ACNPROVID
+          LEFT JOIN Provider.dbo.OxfordCurrentProviderInformation ON OPPI.ACNPROVID = Provider.dbo.OxfordCurrentProviderInformation.ACNPROVID
           AND OPPI.PracticeSpecialty = Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty
           AND OPPI.ClientID = Provider.dbo.OxfordCurrentProviderInformation.ClientID
       WHERE     Provider.dbo.OxfordCurrentProviderInformation.ACNPROVID IS NULL ;
@@ -166,7 +166,7 @@ FROM
       
       SELECT Provider.dbo.OxfordCurrentProviderInformation.*
       INTO #tempLocAddition
-      FROM Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+      FROM Provider.dbo.OxfordCurrentProviderInformation 
         LEFT JOIN Provider.dbo.OxfordPreviousProviderInformation AS OPPI ON Provider.dbo.OxfordCurrentProviderInformation.Acn_Location_ID = OPPI.Acn_Location_ID 
         AND Provider.dbo.OxfordCurrentProviderInformation.ProviderID = OPPI.ProviderID
         AND Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty = OPPI.PracticeSpecialty 
@@ -178,7 +178,7 @@ FROM
 
       Select DISTINCT Provider.dbo.OxfordCurrentProviderInformation.* 
       INTO #tempOxfordProviderChangeAddTerm
-      FROM  Provider.dbo.OxfordCurrentProviderInformation as Provider.dbo.OxfordCurrentProviderInformation 
+      FROM  Provider.dbo.OxfordCurrentProviderInformation  
       INNER JOIN Provider.dbo.OxfordPreviousProviderInformation AS OPPI ON Provider.dbo.OxfordCurrentProviderInformation.ACNPROVID = OPPI.ACNPROVID 
       AND Provider.dbo.OxfordCurrentProviderInformation.ClientID = OPPI.ClientID
       AND Provider.dbo.OxfordCurrentProviderInformation.PracticeSpecialty = OPPI.PracticeSpecialty
@@ -311,9 +311,9 @@ FROM
       Provider.dbo.OxfordCurrentProviderInformation.MinContractEffDate,            
       Provider.dbo.OxfordCurrentProviderInformation.BillingAddressID,
       PCAT.TransferCode
-    FROM Provider.dbo.OxfordCurrentProviderInformation AS Provider.dbo.OxfordCurrentProviderInformation
+    FROM Provider.dbo.OxfordCurrentProviderInformation
       INNER JOIN Provider.dbo.OxfordProviderChangeAddTerm AS PCAT ON Provider.dbo.OxfordCurrentProviderInformation.ProviderID = PCAT.ProviderID
-    WHERE PCAT.TransferCode IN ('C','A') AND
+    WHERE PCAT.TransferCode IN ('C' , 'A') AND
     Provider.dbo.OxfordCurrentProviderInformation.TIN IS NOT NULL;
 
     
@@ -1119,4 +1119,4 @@ FROM
       CASE PhoneType
           WHEN 'V' THEN 1
           WHEN 'F' THEN 2
-          END
+          END;
