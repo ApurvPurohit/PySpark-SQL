@@ -18,3 +18,7 @@ data.to_sql("Table name", con = engine, if_exists = 'append', index = False, chu
 print("Data pushed success")
 #close connection
 conn.close()
+
+
+
+python -m pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org cx_Oracle
