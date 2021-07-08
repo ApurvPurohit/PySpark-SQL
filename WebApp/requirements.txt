@@ -1,0 +1,12 @@
+time
+findspark
+pyspark
+numpy
+flask
+pyodbc
+urllib2
+sqlalchemy
+pandas
+datetime
+cx_Oracle
+Jinja2 == 2.11.3
