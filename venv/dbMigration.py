@@ -46,11 +46,12 @@ def write_into_database(dataframe, database, table_name,  mode):
         .mode(saveMode=mode) \
         .save()
 sqlContext = SQLContext(spark)
-#Set Oralce Connection
-cx_Oracle.init_oracle_client(lib_dir=r"C:\Users\apurohi9\Downloads\instantclient-basic-windows.x64-19.11.0.0.0dbru\instantclient_19_11")
-dsn_tns = cx_Oracle.makedsn('es20-scan01', '1521', service_name='cmc1st01svc.uhc.com')
-conn = cx_Oracle.connect(user='<db_user>', password='<password>', dsn=dsn_tns)
-#Open cursor
+# Set Oralce Connection
+cx_Oracle.init_oracle_client(
+    lib_dir=r"C:\Users\apurohi9\Downloads\instantclient-basic-windows.x64-19.11.0.0.0dbru\instantclient_19_11")
+dsn_tns = cx_Oracle.makedsn(config.Oracle['db_server'], config.Oracle['port'], service_name=config.Oracle['service_name'])
+conn = cx_Oracle.connect(user=config.Oracle['user'], password=config.Oracle['passwd'], dsn=dsn_tns)
+# Open cursor
 cursor = conn.cursor()
 print(conn)
 print(conn.version)
