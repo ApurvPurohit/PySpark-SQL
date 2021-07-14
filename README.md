@@ -1,7 +1,7 @@
 # PySpark-SQL
 Fast structured data-processing and database migration using PySpark distributed SQL query engine.
 
-**NOTE**: To change the Microsoft SQL Server credentials, edit the file `Config.py`.
+**NOTE**: To change the Microsoft SQL Server, Oracle or Sybase credentials, edit the file `Config.py`.
 
 ## Migration WebApp
 * Install Python
